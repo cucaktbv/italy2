@@ -259,8 +259,7 @@ script:
 def clean_and_parse_json(ai_text):
     text = ai_text.strip()
     text = re.sub(r'^```(json)?\s*', '', text, flags=re.IGNORECASE)
-    text = re.sub(r'\s*
-```$', '', text)
+    text = re.sub(r'\s*```$', '', text)
     text = text.strip()
     try:
         return json.loads(text)
